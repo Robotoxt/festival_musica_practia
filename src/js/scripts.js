@@ -26,10 +26,11 @@ function crearGaleria(){
 
     for (let i = 1; i <= CANTIDAD_IMAGENES; i++){
 
-        const imagen = document.createElement('IMG');
-
-        imagen.src= `src/img/gallery/full/${i}.jpg`
-        imagen.alt = 'imagen galeria'
+        const imagen = document.createElement('PICTURE');
+        imagen.innerHTML = `
+        <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+        <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+        <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria"> `;
         
         imagen.classList.add('imagen-galeria')
 
@@ -50,10 +51,13 @@ function crearGaleria(){
 
 function mostrarImagen (i){
 
-    const imagen = document.createElement('IMG');
+    const imagen = document.createElement('PICTURE');
 
-    imagen.src= `src/img/gallery/full/${i}.jpg`
-    imagen.alt = 'imagen galeria'
+    
+    imagen.innerHTML = `
+    <source srcset="build/img/gallery/full/${i}.avif" type="image/avif">
+    <source srcset="build/img/gallery/full/${i}.webp" type="image/webp">
+    <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">`;
 
     // generar modal
 

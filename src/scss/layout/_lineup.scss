@@ -51,7 +51,7 @@
     background-color: v.$amarillo;
 
     li:nth-child(odd){
-        background-color: lighten(v.$amarillo, 10%);
+        background-color: #ffe331;
     }
 }
 
@@ -59,7 +59,7 @@
     background-color: v.$verde;
     
     li:nth-child(odd){
-        background-color: lighten(v.$verde, 10%);
+        background-color: #71c6c3;
     }
 
 }
